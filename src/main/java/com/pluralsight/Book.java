@@ -14,4 +14,32 @@ public class Book {
         isCheckedOut = false;
         checkedOutTo = "";
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isCheckedOut() {
+        return isCheckedOut;
+    }
+
+    public void setCheckedOut(boolean checkedOut) {
+        isCheckedOut = checkedOut;
+    }
+
+    public String getCheckedOutTo() {
+        return checkedOutTo;
+    }
+
+    public void setCheckedOutTo(String checkedOutTo) {
+        this.checkedOutTo = checkedOutTo;
+    }
 }
