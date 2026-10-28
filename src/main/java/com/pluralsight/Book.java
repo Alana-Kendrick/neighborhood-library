@@ -31,15 +31,17 @@ public class Book {
         return isCheckedOut;
     }
 
-    public void setCheckedOut(boolean checkedOut) {
-        isCheckedOut = checkedOut;
-    }
-
     public String getCheckedOutTo() {
         return checkedOutTo;
     }
 
-    public void setCheckedOutTo(String checkedOutTo) {
-        this.checkedOutTo = checkedOutTo;
+    public void checkOut(String name) {
+        checkedOutTo = name;
+        isCheckedOut = true;
+    }
+
+    public void checkIn() {
+        checkedOutTo = "";
+        isCheckedOut = false;
     }
 }
