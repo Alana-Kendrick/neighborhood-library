@@ -16,10 +16,12 @@ public class Library {
         };
 
         // Home menu. Expected input is an int
-        System.out.println("Select an option:");
-        System.out.println("1. Show available books\n 2. Show checked out books\n 3. Exit app");
-        int input = scanner.nextInt();
-
+        int input;
+        do {
+            System.out.println("Select an option:");
+            System.out.println("1. Show available books\n 2. Show checked out books\n 3. Exit app");
+            input = scanner.nextInt();
+        } while (input != 3);
 
         availableBooks(books);
     }
