@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Library {
@@ -14,13 +15,29 @@ public class Library {
                 new Book(984, "978-0451519849", "1984")
         };
 
+        // Home menu. Expected input is an int
+        System.out.println("Select an option:");
+        System.out.println("1. Show available books\n 2. Show checked out books\n 3. Exit app");
+        int input = scanner.nextInt();
+
+
         availableBooks(books);
     }
 
     public static void availableBooks (Book[] books) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Available books:");
+
         for (Book book : books) {
-            System.out.printf("Title: %s\n ID: %d\n ISBN: %s\n", book.getTitle(), book.getId(), book.getIsbn());
+            if (!book.isCheckedOut()) {
+                System.out.printf("Title: %s\n ID: %d\n ISBN: %s\n", book.getTitle(), book.getId(), book.getIsbn());
+            }
+        }
+
+        System.out.print("Enter the title of the book you want to check out or enter x to return to the home screen.");
+        String input = scanner.nextLine();
+        if (!input.equals("x")) {
+
         }
     }
 }
